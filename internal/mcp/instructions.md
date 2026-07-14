@@ -15,10 +15,14 @@ Which tool for which question:
 - Implementations of a behaviour or protocol: `dexter_implementations`
 - What a specific file defines: `dexter_file_outline`
 - Project layout and index freshness: `dexter_workspace`
+- Rename a module or function everywhere: `dexter_rename_symbol`
 
 After you create, edit, or delete Elixir files by any means, call
 `dexter_reindex` (fast, incremental) so results stay accurate. Git branch
 switches are picked up automatically.
+
+`dexter_rename_symbol` writes nothing: apply the returned diff yourself,
+perform the listed file renames, then call `dexter_reindex`.
 
 Elixir specifics: modules are not tied to files (use `dexter_file_outline` for
 a file, `dexter_definition` for a module); pass fully-qualified module names,
